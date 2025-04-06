@@ -1,0 +1,334 @@
+/* 1rem = 1em = px
+we use em for media queries */
+
+/* we must use % instead of px in media queries */
+
+/******************************/
+/* Bellow 1344px (smaller desktops) */
+/******************************/
+@media (max-width: 84em) {
+  .hero {
+    max-width: 120rem;
+  }
+
+  .heading-primary {
+    font-size: 4.4rem;
+  }
+
+  /* .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  } */
+}
+
+/******************************/
+/* Bellow 1200px (Landscape Tablets)*/
+/******************************/
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+
+  .header {
+    padding: 0 3.2rem;
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .grid-5 {
+    column-gap: 4.8rem;
+    row-gap: 6.4rem;
+  }
+
+  .main-nav-list {
+    gap: 3.2rem;
+  }
+
+  .hero {
+    gap: 4.8rem;
+  }
+
+  .testimonials-container {
+    padding: 2.6rem 3.2rem;
+  }
+
+  .heading-step {
+    font-size: 2.4rem;
+  }
+
+  .description-step {
+    line-height: 1.5;
+  }
+}
+
+/******************************/
+/* Bellow 944px (Tablets) */
+/******************************/
+@media (max-width: 58em) {
+  html {
+    font-size: 50%;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 0 8rem;
+    gap: 6.4rem;
+  }
+
+  .hero-img {
+    width: 60%;
+  }
+
+  .hero-text-box,
+  .hero-img-box {
+    text-align: center;
+  }
+
+  .meals-delivered {
+    justify-content: center;
+    margin-top: 3.2rem;
+  }
+
+  .logos img {
+    height: 2.3rem;
+  }
+
+  /* .logo {
+    height: 3rem;
+  } */
+
+  .step-number {
+    font-size: 7.4rem;
+  }
+
+  .meal-content {
+    padding: 2.4rem 3.2rem 3.2rem 3.2rem;
+  }
+
+  .section-testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .cta {
+    grid-template-columns: 3fr 2fr;
+  }
+
+  .cta-form {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-form {
+    margin-top: 1.2rem;
+  }
+
+  /* MOBILE NAVIGATION */
+  .btn-mobile-nav {
+    display: block;
+  }
+
+  .main-nav {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(5px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* HIDE NAVIGATION */
+
+    /* We cant sey [display: none;] Because it doesnt allow us to have a transition So we use opacity */
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition: all 0.5s ease-in;
+  }
+
+  .nav-open .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
+  }
+
+  .main-nav-list {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 3rem;
+  }
+
+  .pricing-plan {
+    width: 100%;
+  }
+}
+
+/******************************/
+/* Bellow 704px (SMaller Tablets) */
+/******************************/
+@media (max-width: 44em) {
+  .grid-4,
+  .grid-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .list-box {
+    grid-column: 1/-1;
+    justify-self: center;
+  }
+
+  .secondary-heading {
+    margin-bottom: 4.8rem;
+  }
+
+  .pricing-plan {
+    width: 100%;
+  }
+
+  .pricing-bg::after {
+    content: "BEST VALUE";
+    position: absolute;
+    top: 4%;
+    right: -15%;
+
+    font-size: 1.4rem;
+    font-weight: 700;
+    background-color: #ffd43b;
+    color: #333;
+    padding: 0.8rem 4.8rem;
+    transform: rotate(45deg);
+  }
+
+  .grid-5 {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 6rem;
+  }
+
+  .logos img {
+    height: 2rem;
+  }
+
+  .cta {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-image-box {
+    height: 45rem;
+    grid-row: 1;
+  }
+
+  .cta-text-box {
+    padding: 3.2rem;
+  }
+}
+
+/******************************/
+/* Bellow 544px (phones) */
+/******************************/
+@media (max-width: 34em) {
+  .grid-2,
+  .grid-4,
+  .grid-3,
+  .step-box {
+    grid-template-columns: 1fr;
+    row-gap: 4.8rem;
+  }
+  .btn-mobile-nav {
+    display: block;
+  }
+  .section-hero {
+    padding: 2.4rem 0 6.4rem 0;
+  }
+
+  .hero {
+    padding: 0 3.2rem;
+  }
+
+  .hero-img {
+    width: 80%;
+  }
+
+  .logos img {
+    height: 1.2rem;
+    /* gap: 2rem; */
+  }
+
+  .btn:link,
+  .btn:visited,
+  .btn {
+    padding: 1.5rem 1.6rem;
+  }
+
+  .pricing-bg::after {
+    content: "BEST VALUE";
+    position: absolute;
+    top: 5%;
+    right: -12%;
+
+    font-size: 1.4rem;
+    font-weight: 700;
+    background-color: #ffd43b;
+    color: #333;
+    padding: 0.8rem 4.8rem;
+    transform: rotate(45deg);
+  }
+
+  .img-box:nth-child(2) {
+    grid-row: 1;
+  }
+
+  .img-box:nth-child(6) {
+    grid-row: 5;
+  }
+
+  .img-box {
+    transform: translateY(2.4rem);
+  }
+
+  .testimonials {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+  }
+
+  .feature-center {
+    text-align: center;
+  }
+
+  .cta {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-image-box {
+    height: 35rem;
+    grid-row: 1;
+  }
+
+  .cta-text-box {
+    padding: 3.2rem;
+  }
+}
